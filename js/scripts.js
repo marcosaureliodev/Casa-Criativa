@@ -1,8 +1,12 @@
+function(onOff) {
+  document
+      .querySelector("footer")
+      .classList 
+      .toggle("hide")
+}
+
 document
-  .querySelector(".fat")
-  .addEventListener("click", function() {
-      document
-          .querySelector("footer")
-          .classList
-          .toggle("hide")
-})
+  .querySelector("button.fat")
+  .addEventListener("click", onOff)
+
+  /* 1:31:56*/
