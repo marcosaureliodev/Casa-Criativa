@@ -20,6 +20,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 
   margin: 0;
+
+  overflow-x: hidden; /* Remover scrow horizontal */
+  /* overflow-y: hidden; remover scrow vertical */
+
+
 }
 
 a {
@@ -175,11 +180,12 @@ footer a {
   justify-content: center;
   /* alinhando conteudo ao meio no eixo x e y */
 
-  transition: all 400ms;
+  transition: 400ms;
+  
 }
 
 #modal .content {
-  margin-top: 128px;  
+  margin-top: 100px;  
 
   color: white;
 }
@@ -244,15 +250,50 @@ form button {
 
   justify-self: end;
 
-  transition: 0.3s;
+  transition: 400ms;
+}
+
+form a{
+
+  width: 150px;
+  height: 40px;
+
+ background-color: #FFFFFF22;
+ color: white;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ font-size: 14px;
+ font-weight: bold;
+
+ border-radius: 6px;
+
+ align-self: end;
+
+ transition: 400ms;
+
 }
 
 form button:hover {
   background-color: #0984E3;
   color: white;
 
+  box-shadow: 4px 3px 5px #25282B20;
+
   text-decoration: none;
 }
+
+form a:hover{
+  background: #FFF;
+  color: #FF5E84;
+
+  box-shadow: 4px 3px 5px #25282B20;
+
+  text-decoration: none;
+}
+
 
 #modal.hide {
   opacity: 0;
