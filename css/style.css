@@ -1,30 +1,31 @@
 /*
-  Box
-    largura
-    altura
-    conteudo da caixa
+Box
+largura
+altura
+conteudo da caixa
 
-    Espaçamentos
-    preenchimento
-    Bordas
+Espaçamentos
+preenchimento
+Bordas
 
-    Posicionamentos
+Posicionamentos
 */
 
-
-
+/* GLOBAL */
 body {
   background: #E5E5E5;
   color: #25282B;
-
+  
   font-family: 'Montserrat', sans-serif;
-
+  
   margin: 0;
+  
+  /*overflow-x: hidden;Remover scrow horizontal
+  overflow-y: hidden; remover scrow vertical */
+}
 
-  overflow-x: hidden; /* Remover scrow horizontal */
-  /* overflow-y: hidden; remover scrow vertical */
-
-
+body.hideScroll {
+  overflow: hidden;
 }
 
 a {
@@ -43,21 +44,50 @@ p, .descriptions {
   letter-spacing: 0.1px;
 }
 
+.button {
+  color: #fff;
+  background: #FF5E84;
 
+  width: 150px;
+  height: 40px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0px 8px 16px #FF5E8432;
+
+  transition: 300ms;
+}
+
+.button:hover {
+  text-decoration: none;
+  background-color: #0984E3;
+  text-decoration: none;
+
+  box-shadow: 4px 3px 5px #25282B20;
+}
+
+/* Padrão */
 
 #container {
   width: 90%;
   max-width: 980px;
-
+  
   margin: 40px auto;
-
+  
   display: flex;
 }
 
 #intro {
   width: 300px;
 
-  margin-right: 20px;
+  margin-right: 64px;
 }
 
 main {
@@ -91,21 +121,6 @@ button:hover {
   text-decoration: underline;
 }
 
-button.fat {
-  color: #fff;
-  background: #FF5E84;
-
-  width: 150px;
-  height: 40px;
-
-  border-radius: 6px;
-
-  box-shadow: 0px 8px 16px #FF5E8432;
-}
-
-button.fat:hover {
-  text-decoration: none;
-}
 
 footer {
   text-align: center;
@@ -159,20 +174,20 @@ footer a {
   background: #FF5E84;
 
   /* preenchimento de imagem a partir do momento que se ativa position absolute */
-  /* 1º forma
+  
+  /* 1º forma */
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  */
 
-  /* 2º forma */
+  /* 2º forma 
   position: absolute;
   top: 0;
 
   width: 100vw;
-  height: 155vh;
+  height: 100vw;*/
   
   /* alinhando conteudo ao meio no eixo x e y */
   display: flex;
@@ -184,8 +199,12 @@ footer a {
   
 }
 
+#modal.addScroll {
+  overflow: auto;
+}
+
 #modal .content {
-  margin-top: 100px;  
+  margin-top: 15%;
 
   color: white;
 }
@@ -198,7 +217,7 @@ footer a {
   width: 80%;
   max-width: 800px;
 
-  margin: 0 auto;
+  margin: 0 auto 15%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -326,30 +345,43 @@ form a:hover{
 #page-ideas nav li a {
   color: #25282B;
 }
+#page-ideas nav li a.button {
+  color: white;
+}
 
 #page-ideas nav li:last-child {
   margin: 0;
 }
 
-#page-ideas nav li:last-child a {
-  width: 150px;
-  height: 40px;
-  
-  background-color: #FF5E84;
-  color: white;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-
-  transition: 300ms;
+section#title {
+  text-align: center;
 }
 
-#page-ideas nav li:last-child a:hover {
-  background-color: #0984E3;
-  text-decoration: none;
+section#title p {
+  opacity: 0.7;
+  margin: 0;
+}
 
-  box-shadow: 4px 3px 5px #25282B20;
+section#title h1 {
+  margin: 0;
 
+  font-size: 28px;
+}
+
+section#ideas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+section#ideas .idea {
+  margin: 0;
+}
+
+section#title,
+section#ideas,
+footer {
+  margin-top: 64px;
 }
